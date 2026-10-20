@@ -14,8 +14,8 @@ var clave = "vicsa";
 const { createClient } = require('@supabase/supabase-js');
 
 // 2. Configurar con tu URL y tu Public Key (anon key)
-const supabaseUrl = 'https://tu-proyecto.supabase.co';
-const supabaseKey = 'TU_PUBLIC_ANON_KEY_AQUI';
+const supabaseUrl = 'https://mcfqchwmtlolufbmbbtr.supabase.co';
+const supabaseKey = 'sb_publishable_m0lKEmUIMpjVen3d0xO3aQ_FNutSo3e';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 app.use("/appClienteGestor", express.static("cliente_gestor")); 

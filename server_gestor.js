@@ -31,10 +31,6 @@ Resumen códigos:
 404: recurso no encontrado
 */
 
-// =====================================================
-// RUTAS PÚBLICAS (no necesitan token)
-// =====================================================
-
 app.post("/api/gestores/login", async function(req, res){
     var user = req.body.user;
     var contra = req.body.contra;
@@ -90,10 +86,7 @@ app.post("/api/gestores", async function(req, res){
     return res.status(201).json("Usuario registrado correctamente");
 });
 
-// =====================================================
-// MIDDLEWARE JWT
-// Todo lo que haya debajo de este use necesita token
-// =====================================================
+
 
 app.use("/api", function (req, res, next) {
     var token = req.query.token;
@@ -118,9 +111,7 @@ app.use("/api", function (req, res, next) {
     next();
 });
 
-// =====================================================
-// RUTAS PRIVADAS (necesitan token)
-// =====================================================
+
 
 app.get("/api/ubicaciones", async function(req, res){
     var { data, error } = await supabase.from("ubicaciones").select("*");
